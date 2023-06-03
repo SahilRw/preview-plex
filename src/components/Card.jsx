@@ -20,9 +20,9 @@ const Card = ({ movie }) => {
                         </SkeletonTheme>
                     </div>
                     :
-                    <Link to={`movie/${movie.id}`}>
+                    <Link to={`/movie/${movie.id}`}>
                         <div>
-                            <img className="cards__img" src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} />
+                            <img className="cards__img" alt={movie.original_title} src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} />
                             <div>
                                 <div>{movie ? movie.original_title : ''}</div>
                                 <div>
