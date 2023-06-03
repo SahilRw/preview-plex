@@ -16,43 +16,40 @@ const Home = () => {
     }, [])
 
     return (
-        <>
-            <div className=''>
-                <Carousel
-                    showThumbs={false}
-                    autoPlay={true}
-                    transitionTime={3}
-                    infiniteLoop={true}
-                    showStatus={false}
-                >
-                    {
-                        popularMovies.map(movie => (
-                            <Link key={movie.id} to={`/movie/${movie.id}`}>
-                                <div>
-                                    <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movie.original_title" />
+        <section className='absolute top-24'>
+            <Carousel
+                showThumbs={false}
+                autoPlay={true}
+                transitionTime={3}
+                infiniteLoop={true}
+                showStatus={false}
+                className='mx-8'
+            >
+                {
+                    popularMovies.map(movie => (
+                        <Link key={movie.id} to={`/movie/${movie.id}`}>
+                            <div className='lg:h-3/4 lg:w-3/4 mx-auto'>
+                                <img className='' src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movie.original_title" />
+                            </div>
+                            <div className='flex flex-col lg:items-center text-left absolute bottom-0 w-full lg:w-1/3 px-4 pb-8 opacity-0 hover:opacity-100 lg:inset-x-1/3 lg:text-center'>
+                                <h1 className='text-4xl font-bold'>{movie ? movie.original_title : ''}</h1>
+                                <div className='text-red-600'>
+                                    {movie ? movie.release_date : ''}
+                                    <span className='px-2'>
+                                        {movie ? movie.vote_average : ''}
+                                        <i className="fas fa-star" />{" "}
+                                    </span>
                                 </div>
-                                <div>
-                                    <div>{movie ? movie.original_title : ''}</div>
-                                    <div>
-                                        {movie ? movie.release_date : ''}
-                                        <span>
-                                            {movie ? movie.vote_average : ''}
-                                            <i className="fas fa-star" />{" "}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        {movie ? movie.overview : ''}
-                                    </div>
-                                </div>
-                            </Link>
-                        ))
-                    }
-                </Carousel >
-
-
-                <Movielist />
-            </div >
-        </>
+                                <p className='text-xl text-[#84c3ff] italic'>
+                                    {movie ? movie.overview : ''}
+                                </p>
+                            </div>
+                        </Link>
+                    ))
+                }
+            </Carousel >
+            <Movielist />
+        </section>
     )
 }
 
