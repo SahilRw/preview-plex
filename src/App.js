@@ -10,10 +10,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route index element={<Home />} />
+          <Route path="/*" element={<Home />} />
           <Route path="movie/:id" element={<MovieDetails />} />
           <Route path="movies/:type" element={<MovieList />} />
-          <Route path="/*" element={<h1>Error Page</h1>} />
+          {/* <Route path="/*" element={<h1>Error Page</h1>} /> */}
         </Routes>
       </Router>
     </div>
