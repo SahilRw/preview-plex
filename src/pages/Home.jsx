@@ -16,7 +16,7 @@ const Home = () => {
     }, [])
 
     return (
-        <section className='absolute top-24'>
+        <section className='absolute top-28'>
             <Carousel
                 showThumbs={false}
                 autoPlay={true}
@@ -24,6 +24,7 @@ const Home = () => {
                 infiniteLoop={true}
                 showStatus={false}
                 className='mx-8'
+                emulateTouch={true}
             >
                 {
                     popularMovies.map(movie => (
@@ -32,7 +33,7 @@ const Home = () => {
                                 <img className='' src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="movie.original_title" />
                             </div>
                             <div className='flex flex-col lg:items-center text-left absolute bottom-0 w-full lg:w-1/3 px-4 pb-8 opacity-0 hover:opacity-100 lg:inset-x-1/3 lg:text-center'>
-                                <h1 className='text-4xl font-bold'>{movie ? movie.original_title : ''}</h1>
+                                <h2 className='text-4xl font-bold'>{movie ? movie.original_title : ''}</h2>
                                 <div className='text-red-600'>
                                     {movie ? movie.release_date : ''}
                                     <span className='px-2'>
@@ -40,7 +41,7 @@ const Home = () => {
                                         <i className="fas fa-star" />{" "}
                                     </span>
                                 </div>
-                                <p className='text-xl text-[#84c3ff] italic'>
+                                <p className='text-xs text-[#999999] italic'>
                                     {movie ? movie.overview : ''}
                                 </p>
                             </div>
