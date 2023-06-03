@@ -21,9 +21,9 @@ const Movielist = () => {
     }, [type])
 
     return (
-        <section>
-            <h2>{(type ? type : "POPULAR").toUpperCase()}</h2>
-            <div>
+        <section className='px-4 my-10'>
+            <h2 className='py-10 text-6xl font-semibold text-red-500'>{(type ? type : "POPULAR").toUpperCase()}</h2>
+            <div className='flex flex-wrap justify-center' >
                 {
                     movieList.map(movie => (
                         <Card movie={movie} key={movie.id} />
