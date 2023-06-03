@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
-        <section>
+        <section className='flex justify-between'>
             <div>
                 <Link to='/'>
                     Preview Plex
                     <img className='' src="" alt="" />
                 </Link>
+            </div>
+            <div>
                 <Link to='/movies/popular'>Popular</Link>
                 <Link to='/movies/top_rated'>Top Rated</Link>
                 <Link to='/movies/upcoming'>Upcoming</Link>
