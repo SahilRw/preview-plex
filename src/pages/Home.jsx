@@ -41,7 +41,7 @@ const Home = () => {
                                         <i className="fas fa-star" />{" "}
                                     </span>
                                 </div>
-                                <p className='text-xs text-[#999999] italic'>
+                                <p className='text-xl text-[#fff] italic'>
                                     {movie ? movie.overview : ''}
                                 </p>
                             </div>
